@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TastyTrek — Home</title>
+  <link rel="stylesheet" href="style.css">
   <style>
 
 html, body 
@@ -232,8 +233,11 @@ nav a {
     <a href="explore.html">Explore</a>
     <a href="restaurants.html">Restaurants</a>
     <a href="contact.html">Contact</a>
+    <div class="cart-icon" data-count="0">🛒</div>
   </nav>
 </header>
+
+<button class="toggle-btn" onclick="toggleDarkMode()">🌙</button>
 <section id="main">
 
   <video autoplay muted loop>
@@ -269,7 +273,8 @@ nav a {
           <p>Handpicked places, top-rated menus, and offers — all in one place.</p>
 
           <div class="search-box">
-            <input type="text" placeholder="Search for restaurants" />
+            <input type="text" id="search-input" placeholder="Search for restaurants" />
+            <div id="suggestions" style="position: absolute; background: #374151; border-radius: 8px; max-height: 200px; overflow-y: auto; display: none; z-index: 10; width: calc(100% - 20px); margin-top: 5px;"></div>
             <select>
               <option>Current City</option>
               <option>City A</option>
@@ -356,5 +361,8 @@ nav a {
   </div>
 
 </section>
+
+<script src="global.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
