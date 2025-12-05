@@ -1,96 +1,360 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TastyTrek — Home</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
-body{background:#0f172a;color:#fff;transition:0.3s;}
-header{display:flex;justify-content:space-between;align-items:center;padding:20px 30px;background:#1e293b;position:sticky;top:0;z-index:10;}
-.logo-box{display:flex;align-items:center;gap:12px;}
-.logo{width:45px;height:45px;background:#ff6b35;border-radius:10px;display:flex;justify-content:center;align-items:center;font-weight:bold;color:#000;font-size:18px;}
-nav a{margin-left:15px;text-decoration:none;color:#d1d5db;font-weight:bold;transition:0.3s;}
-nav a:hover{color:#ff6b35;}
-.hero{background:url('assets/images/hero.jpg') center/cover no-repeat;height:270px;display:flex;align-items:center;padding-left:40px;position:relative;}
-.hero::after{content:"";position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.45);}
-.hero h1{position:relative;font-size:42px;font-weight:bold;}
-.container{max-width:1200px;margin:40px auto;padding:0 20px;}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:26px;}
-.card{background:#1e293b;border-radius:18px;overflow:hidden;transition:0.3s;cursor:pointer;}
-.card:hover{transform:translateY(-6px);box-shadow:0 0 18px rgba(0,0,0,0.45);}
-.card img{width:100%;height:180px;object-fit:cover;}
-.card-content{padding:15px 18px;}
-.title{font-size:20px;font-weight:bold;margin-bottom:5px;}
-.rating{background:#22c55e;font-size:14px;padding:3px 7px;border-radius:5px;font-weight:bold;color:#000;display:inline-block;margin-bottom:8px;}
-.info{font-size:15px;color:#cbd5e1;margin-bottom:5px;}
-.veg{display:inline-block;padding:3px 7px;border-radius:6px;background:#16a34a;font-size:13px;color:#fff;font-weight:bold;}
-.nonveg{display:inline-block;padding:3px 7px;border-radius:6px;background:#dc2626;font-size:13px;color:#fff;font-weight:bold;}
-footer{text-align:center;padding:20px;background:#1e293b;margin-top:40px;}
-.toggle-btn{position:fixed;bottom:20px;right:20px;padding:10px 15px;background:#ff6b35;border:none;border-radius:5px;color:#000;font-weight:bold;cursor:pointer;}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TastyTrek — Home</title>
+  <style>
+
+html, body 
+{
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+#main {
+  width: 100vw;
+  height: 100vh;
+  max-width: 100vw;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 6vw;
+  padding-right: 6vw;
+  color: white;
+}
+#main video {
+  position: absolute;
+  z-index: -2;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+}
+#main .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.55);
+  z-index: -1;
+}  
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #111827;
+  color: #fff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+header {
+  padding: 20px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  backdrop-filter: blur(6px);
+  background: rgba(0,0,0,0.4);
+  z-index: 10;
+}
+
+.logo-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  width: 45px;
+  height: 45px;
+  border-radius: 8px;
+  background: #ff6b35;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 18px;
+  color: #000;
+}
+
+nav a {
+  margin-left: 15px;
+  color: #d1d5db;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#main {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 6vw;
+  padding-right: 6vw;
+  color: white;
+}
+
+#main .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: -1;
+}
+
+#main video {
+  position: absolute;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 30px;
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  gap: 25px;
+}
+
+.panel {
+  background: #1f2937;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+.hero {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.hero-card {
+  flex: 1;
+  background: #0f172a;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.search-box {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.search-box input,
+.search-box select {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background: #374151;
+  color: white;
+}
+
+.btn-primary {
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  background: #ff6b35;
+}
+
+.tag {
+  display: inline-block;
+  padding: 6px 10px;
+  background: #111827;
+  border-radius: 999px;
+  margin-right: 8px;
+  font-size: 13px;
+}
+
+.thumb {
+  width: 88px;
+  height: 66px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.card {
+  display: flex;
+  gap: 12px;
+  background: #111827;
+  padding: 12px;
+  border-radius: 10px;
+}
+
+.rating {
+  background: #0f172a;
+  padding: 6px 8px;
+  border-radius: 8px;
+}
+
 </style>
 </head>
+
 <body>
 
+<!-- FIXED HEADER -->
 <header>
   <div class="logo-box">
     <div class="logo">TT</div>
-    <h2>TastyTrek</h2>
+    <div>
+      <h3>TastyTrek</h3>
+      <small style="color:#9ca3af">Find the best food near you</small>
+    </div>
   </div>
+
   <nav>
-    <a href="index.html">Home</a>
+    <a href="#main">Main</a>
+    <a href="#index">Home</a>
     <a href="explore.html">Explore</a>
     <a href="restaurants.html">Restaurants</a>
-    <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
   </nav>
 </header>
+<section id="main">
 
-<section class="hero">
-  <h1>Delicious Food Delivered Fast</h1>
-</section>
+  <video autoplay muted loop>
+    <source src="3015488-hd_1920_1080_24fps.mp4" type="video/mp4" />
+  </video>
 
-<div class="container">
-  <h2>Popular Dishes</h2>
-  <div class="grid">
-    <div class="card">
-      <img src="assets/images/biryani.jpg" alt="Biryani">
-      <div class="card-content">
-        <div class="title">Biryani Central</div>
-        <div class="rating">4.4 ★</div>
-        <div class="info">Biryani, Kebabs</div>
-        <span class="nonveg">Non-Veg</span>
-      </div>
-    </div>
-    <div class="card">
-      <img src="assets/images/pizza.jpg" alt="Pizza">
-      <div class="card-content">
-        <div class="title">Italiano Pizzeria</div>
-        <div class="rating">4.2 ★</div>
-        <div class="info">Pizza, Pasta</div>
-        <span class="nonveg">Non-Veg</span>
-      </div>
+  <div class="overlay"></div>
+
+  <div>
+    <h1 style="font-size:4rem; line-height:1.1; margin-bottom:1rem;">
+      India’s #1<br>food delivery app
+    </h1>
+
+    <p style="font-size:1.3rem; max-width:450px; opacity:0.9; margin-bottom:2rem;">
+      Experience fast & easy online ordering on the TastyTrek app.
+    </p>
+
+    <div style="display:flex; gap:1rem;">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/1200px-Google_Play_Store_badge_EN.svg.png" style="height:55px;">
+      <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" style="height:55px;">
     </div>
   </div>
-</div>
 
-<button class="toggle-btn" onclick="toggleTheme()">Dark / Light</button>
+</section>
 
-<footer>
-  &copy; 2025 TastyTrek. All rights reserved.
-</footer>
+<section id="index">
 
-<script>
-function toggleTheme(){
-  if(document.body.style.background==='white'){
-    document.body.style.background='#0f172a';
-    document.body.style.color='#fff';
-  } else {
-    document.body.style.background='white';
-    document.body.style.color='black';
-  }
-}
-</script>
+  <div class="container">
+    <main>
+      <section class="panel hero">
+        <div class="hero-card">
+          <h1>Discover restaurants, cafes and food near you</h1>
+          <p>Handpicked places, top-rated menus, and offers — all in one place.</p>
 
+          <div class="search-box">
+            <input type="text" placeholder="Search for restaurants" />
+            <select>
+              <option>Current City</option>
+              <option>City A</option>
+              <option>City B</option>
+            </select>
+            <button class="btn-primary">Search</button>
+          </div>
+
+          <div style="margin-top:14px;">
+            <span class="tag">Free Delivery</span>
+            <span class="tag">Top Rated</span>
+            <span class="tag">Pure Veg</span>
+          </div>
+        </div>
+
+        <div style="width:320px;">
+          <div class="panel small-card">
+            <h3>Trending Now</h3>
+
+            <div class="list">
+              <div class="card">
+                <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092" class="thumb" />
+                <div>
+                  <strong>Spice Villa</strong><br />
+                  <small style="color:#9ca3af">Indian · 4.6</small>
+                </div>
+              </div>
+
+              <div class="card">
+                <img src="https://images.unsplash.com/photo-1544025162-d76694265947" class="thumb" />
+                <div>
+                  <strong>Pasta Corner</strong><br />
+                  <small style="color:#9ca3af">Italian · 4.5</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel small-card" style="margin-top:16px;">
+            <h4>Quick Links</h4>
+            <p style="color:#d1d5db">Offers · Veg · Desserts · Nearby</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel" style="margin-top:18px;">
+        <h2>Recommended for you</h2>
+        <p>Picked based on your location and trending orders.</p>
+
+        <div class="list">
+
+          <a class="card" href="#" style="text-decoration:none;color:inherit">
+            <img src="https://images.unsplash.com/photo-1541542684-45a3f8c3f2a2" class="thumb" />
+            <div style="flex:1">
+              <strong>Burger House</strong><br />
+              <small style="color:#9ca3af">Fast Food · 4.4</small>
+            </div>
+            <div class="rating">4.4</div>
+          </a>
+
+          <a class="card" href="#" style="text-decoration:none;color:inherit">
+            <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe" class="thumb" />
+            <div style="flex:1">
+              <strong>Sushi World</strong><br />
+              <small style="color:#9ca3af">Japanese · 4.7</small>
+            </div>
+            <div class="rating">4.7</div>
+          </a>
+
+        </div>
+      </section>
+    </main>
+
+    <aside class="explore-side">
+      <div class="panel">
+        <h4>Popular Cuisines</h4>
+        <div style="margin-top:8px;">
+          <span class="tag">Indian</span>
+          <span class="tag">Chinese</span>
+          <span class="tag">Italian</span>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+</section>
 </body>
 </html>
