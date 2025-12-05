@@ -37,6 +37,23 @@ header {
   font-size: 18px;
   color: #000;
 }
+.dark {
+  color-scheme: dark;
+}
+
+.dark body {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+.dark .bg-white {
+  background-color: #2a2a2a !important;
+}
+
+.dark .text-black {
+  color: #ffffff !important;
+}
+
 
 nav a {
   margin-left: 15px;
