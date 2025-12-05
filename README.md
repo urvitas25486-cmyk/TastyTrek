@@ -32,8 +32,18 @@ TastyTrek/
 ├── explore.html
 ├── restaurants.html
 ├── contact.html
+├── index.css
 ├── explore.css
-└── 3015488-hd_1920_1080_24fps.mp4
+├── restaurants.css
+├── contact.css
+├── index.js
+├── explore.js
+├── restaurants.js
+├── logo.jpg
+├── 3015488-hd_1920_1080_24fps.mp4
+├── video.mp4
+└── README.md
+
 ```
 ## 🚀 Deployment Options
 
