@@ -4,95 +4,80 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TastyTrek — Explore</title>
-<link rel="stylesheet" href="explore.css">
-
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
+body{background:#0f172a;color:#fff;transition:0.3s;}
+header{display:flex;justify-content:space-between;align-items:center;padding:20px 30px;background:#1e293b;position:sticky;top:0;z-index:10;}
+.logo-box{display:flex;align-items:center;gap:12px;}
+.logo{width:45px;height:45px;background:#ff6b35;border-radius:10px;display:flex;justify-content:center;align-items:center;font-weight:bold;color:#000;font-size:18px;}
+nav a{margin-left:15px;text-decoration:none;color:#d1d5db;font-weight:bold;transition:0.3s;}
+nav a:hover{color:#ff6b35;}
+.container{max-width:1200px;margin:40px auto;padding:0 20px;}
+h1{margin-bottom:20px;}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:26px;}
+.card{background:#1e293b;border-radius:18px;overflow:hidden;transition:0.3s;cursor:pointer;}
+.card:hover{transform:translateY(-6px);box-shadow:0 0 18px rgba(0,0,0,0.45);}
+.card img{width:100%;height:180px;object-fit:cover;}
+.card-content{padding:15px 18px;}
+.title{font-size:20px;font-weight:bold;margin-bottom:5px;}
+footer{text-align:center;padding:20px;background:#1e293b;margin-top:40px;}
+.toggle-btn{position:fixed;bottom:20px;right:20px;padding:10px 15px;background:#ff6b35;border:none;border-radius:5px;color:#000;font-weight:bold;cursor:pointer;}
+</style>
 </head>
 <body>
 
 <header>
   <div class="logo-box">
     <div class="logo">TT</div>
-    <div>
-      <h3>TastyTrek</h3>
-      <small style="color:#9ca3af">Find the best food near you</small>
-    </div>
+    <h2>TastyTrek</h2>
   </div>
-
   <nav>
     <a href="index.html">Home</a>
     <a href="explore.html">Explore</a>
     <a href="restaurants.html">Restaurants</a>
+    <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
   </nav>
 </header>
 
 <div class="container">
-  <h1>Explore Services</h1>
-  <p>Discover everything TastyTrek brings to your city.</p>
-
-  <div class="grid">
-    <div class="card">
-      <img src="https://cdn-icons-png.flaticon.com/512/3075/3075977.png" class="app-icon">
-      <div class="card-title">TastyTrek Food</div>
-      <div class="card-text">Order delicious meals from top restaurants around you.</div>
-      <a class="link" href="#">Check it out</a>
-    </div>
-
-    <div class="card">
-      <img src="https://cdn-icons-png.flaticon.com/512/3081/3081559.png" class="app-icon">
-      <div class="card-title">TT Quick</div>
-      <div class="card-text">Instant groceries, snacks, and essentials delivered fast.</div>
-      <a class="link" href="#">Check it out</a>
-    </div>
-
-    <div class="card">
-      <img src="https://cdn-icons-png.flaticon.com/512/747/747310.png" class="app-icon">
-      <div class="card-title">TT Events</div>
-      <div class="card-text">Find dining experiences, food events, and nightlife.</div>
-      <a class="link" href="#">Check it out</a>
-    </div>
-
-    <div class="card">
-      <img src="https://cdn-icons-png.flaticon.com/512/4323/4323074.png" class="app-icon">
-      <div class="card-title">TT Supplies</div>
-      <div class="card-text">Premium kitchen and restaurant supplies delivered reliably.</div>
-      <a class="link" href="#">Check it out</a>
-    </div>
+<h1>Explore Services</h1>
+<div class="grid">
+  <div class="card">
+    <img src="assets/images/food.jpg" alt="Food">
+    <div class="card-content"><div class="title">TastyTrek Food</div></div>
   </div>
-
-  <br><br><br><br><br><br><br><br>
-
-  <section class="tt-gold">
-    <div class="gold-content">
-      <h2 class="brand">TastyTrek</h2>
-      <h1 class="gold-title">PRIME</h1>
-      <p class="gold-subtitle">India's Top Savings Program for Food Lovers</p>
-
-      <h3 class="benefits-title">★ PRIME BENEFITS ★</h3>
-
-      <div class="gold-benefits">
-
-        <div class="benefit">
-          <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" class="benefit-icon">
-          <div>
-            <strong>Free Delivery</strong>
-            <p>At all restaurants within 7 km</p>
-          </div>
-        </div>
-
-        <div class="benefit">
-          <img src="https://cdn-icons-png.flaticon.com/512/562/562678.png" class="benefit-icon">
-          <div>
-            <strong>Up to 30% extra off</strong>
-            <p>At 20,000+ partner restaurants</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
+  <div class="card">
+    <img src="assets/images/quick.jpg" alt="Quick">
+    <div class="card-content"><div class="title">TT Quick</div></div>
+  </div>
+  <div class="card">
+    <img src="assets/images/events.jpg" alt="Events">
+    <div class="card-content"><div class="title">TT Events</div></div>
+  </div>
+  <div class="card">
+    <img src="assets/images/supplies.jpg" alt="Supplies">
+    <div class="card-content"><div class="title">TT Supplies</div></div>
+  </div>
 </div>
+</div>
+
+<button class="toggle-btn" onclick="toggleTheme()">Dark / Light</button>
+
+<footer>&copy; 2025 TastyTrek. All rights reserved.</footer>
+
+<script>
+function toggleTheme(){
+  if(document.body.style.background==='white'){
+    document.body.style.background='#0f172a';
+    document.body.style.color='#fff';
+  } else {
+    document.body.style.background='white';
+    document.body.style.color='black';
+  }
+}
+</script>
 
 </body>
 </html>
+

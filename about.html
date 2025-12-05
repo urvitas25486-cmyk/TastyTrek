@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TastyTrek — About</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
+body{background:#0f172a;color:#fff;transition:0.3s;}
+header{display:flex;justify-content:space-between;align-items:center;padding:20px 30px;background:#1e293b;position:sticky;top:0;z-index:10;}
+.logo-box{display:flex;align-items:center;gap:12px;}
+.logo{width:45px;height:45px;background:#ff6b35;border-radius:10px;display:flex;justify-content:center;align-items:center;font-weight:bold;color:#000;font-size:18px;}
+nav a{margin-left:15px;text-decoration:none;color:#d1d5db;font-weight:bold;transition:0.3s;}
+nav a:hover{color:#ff6b35;}
+.container{max-width:900px;margin:40px auto;padding:0 20px;line-height:1.8;}
+h1{margin-bottom:20px;}
+footer{text-align:center;padding:20px;background:#1e293b;margin-top:40px;}
+.toggle-btn{position:fixed;bottom:20px;right:20px;padding:10px 15px;background:#ff6b35;border:none;border-radius:5px;color:#000;font-weight:bold;cursor:pointer;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo-box">
+    <div class="logo">TT</div>
+    <h2>TastyTrek</h2>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="explore.html">Explore</a>
+    <a href="restaurants.html">Restaurants</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<div class="container">
+<h1>About TastyTrek</h1>
+<p>TastyTrek is India's #1 modern food delivery experience, delivering your favorite dishes fast and fresh. We focus on clean design, smooth navigation, and the joy of discovering great food. Whether it’s your local favorite or something new, TastyTrek brings the best of culinary delights to your doorstep.</p>
+<p>Our philosophy is simple: fast delivery, quality food, and an easy-to-use experience. Join thousands of satisfied foodies who explore, order, and enjoy with TastyTrek every day.</p>
+</div>
+
+<button class="toggle-btn" onclick="toggleTheme()">Dark / Light</button>
+
+<footer>&copy; 2025 TastyTrek. All rights reserved.</footer>
+
+<script>
+function toggleTheme(){
+  if(document.body.style.background==='white'){
+    document.body.style.background='#0f172a';
+    document.body.style.color='#fff';
+  } else {
+    document.body.style.background='white';
+    document.body.style.color='black';
+  }
+}
+</script>
+
+</body>
+</html>
